@@ -1,0 +1,12 @@
+INPUT(
+./release\glwidget.o
+./release\main.o
+./release\window.o
+./release\qcustomplot.o
+./release\mainwindow.o
+./release\qrc_textures.o
+./release\moc_glwidget.o
+./release\moc_window.o
+./release\moc_qcustomplot.o
+./release\moc_mainwindow.o
+);
