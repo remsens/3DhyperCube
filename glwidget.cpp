@@ -534,20 +534,7 @@ void GLWidget::makeObject()
 
 
 }
-void GLWidget::openAllChanels()// старая ф-ия, сейчас используется loadData
-{
-    data = new qint16*[CHNLS];
-    for (int i=0; i<CHNLS; ++i)
-        data[i]=new qint16[ROWS*COLS];
-    QFile fileArr[CHNLS];
-    for (int j = 0; j < CHNLS; ++j)
-    {
-        fileArr[j].setFileName(QString("D:/Work/Programming/QT/ForPeleng/kanal%1.dat").arg(j));
-        fileArr[j].open(QFile::ReadOnly);
-        fileArr[j].read((char*)data[j],ROWS*COLS*2);
-        fileArr[j].close();
-    }
-}
+
 
 void GLWidget::loadData(HyperCube *ptrCube)
 {
