@@ -43,7 +43,7 @@
 #include <QOpenGLShaderProgram>
 #include <QOpenGLTexture>
 #include <QMouseEvent>
-#include <algorithm>
+#include <GL/glu.h>
 using namespace std;
 
 int cmp(const void *a, const void *b);
@@ -416,6 +416,7 @@ void GLWidget::resizeGL(int width, int height)
 void GLWidget::mousePressEvent(QMouseEvent *event)
 {
     lastPos = event->pos();
+
 }
 
 void GLWidget::mouseMoveEvent(QMouseEvent *event)
