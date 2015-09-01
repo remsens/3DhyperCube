@@ -417,6 +417,22 @@ void GLWidget::mousePressEvent(QMouseEvent *event)
 {
     lastPos = event->pos();
 
+
+    //gluUnProject();// http://www.gamedev.ru/code/forum/?id=83558
+    GLint  viewport[4];
+    GLdouble modelMatrix[16];
+    GLdouble projMatrix[16];
+    glGetDoublev(GL_MODELVIEW_MATRIX, modelMatrix);
+    glGetDoublev(GL_PROJECTION_MATRIX, projMatrix);
+    glGetIntegerv(GL_VIEWPORT,viewport);
+    GLdouble *objx = NULL;
+    GLdouble *objy = NULL;
+    GLdouble *objz = NULL;
+    GLdouble winx = event->pos().x();
+    GLdouble winy = event->pos().y();
+    gluUnProject(winx,winy,2,modelMatrix,projMatrix,viewport,objx,objy,objz);
+
+
 }
 
 void GLWidget::mouseMoveEvent(QMouseEvent *event)
